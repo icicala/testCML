@@ -6,7 +6,6 @@ jobs:
     container: docker://dvcorg/cml-py3:latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
       - uses: iterative/setup-cml@v1
       - name: Train model
         env:
@@ -14,5 +13,8 @@ jobs:
         run: |
           pip install -r requirements.txt
           python train.py
-          echo "Model Metrics"
-          cat metrics.txt
+          echo "### Model training complete!###" > report.md
+          cat metrics.txt >> report.md
+          cml-publish feature_importance.png --md >> report.md
+          cml-publish residuals.png --md >> report.md
+          cml-send-comment report.md
