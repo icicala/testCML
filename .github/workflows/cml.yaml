@@ -8,6 +8,8 @@ jobs:
       - uses: actions/setup-python@v4
       - uses: iterative/setup-cml@v1
       - name: Activate virtual environment and install dependencies
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python -m venv venv
           source venv/bin/activate
