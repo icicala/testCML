@@ -61,7 +61,10 @@ ax.set_title('Random forest\nfeature importance', fontsize = title_fs)
 plt.tight_layout()
 plt.savefig("feature_importance.png",dpi=120)
 with open("metrics.txt", 'w') as outfile:
-        outfile.write(os.getcwd())
+        if os.path.exists("feature_importance.png"):
+            outfile.write("Feature importance plot saved")
+        else:
+            outfile.write("Feature importance plot NOT saved")
 plt.close()
 
 
