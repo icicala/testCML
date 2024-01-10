@@ -1,4 +1,6 @@
-import pandas as pd 
+import os
+
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 import matplotlib.pyplot as plt
@@ -57,7 +59,8 @@ ax.set_ylabel('Feature', fontsize = axis_fs)#ylabel
 ax.set_title('Random forest\nfeature importance', fontsize = title_fs)
 
 plt.tight_layout()
-plt.savefig("feature_importance.png",dpi=120) 
+plt.savefig("feature_importance.png",dpi=120)
+print(os.getcwd())
 plt.close()
 
 
