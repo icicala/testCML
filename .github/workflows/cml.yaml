@@ -11,6 +11,5 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "# CML report" >> report.md
-          cat metrics.txt >> report.md
           echo "![](./feature_importance.png)" >> report.md
           cml comment create report.md
