@@ -7,10 +7,17 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: iterative/setup-cml@v1
-      - name: Train model
-        env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Create virtual environment
+        run: python -m venv venv
+      - name: Activate virtual environment and install dependencies
         run: |
+          source venv/bin/activate
+          pip install --upgrade pip
           pip install -r requirements.txt
           python train.py
           echo "### Model training complete!###" > report.md
