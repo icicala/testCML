@@ -11,5 +11,5 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "# CML report" >> report.md
-          echo "![](./feature_importance.png)" >> report.md
+          cml-publish feature_importance.png --md >> report.md
           cml comment create report.md
