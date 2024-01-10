@@ -9,6 +9,7 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: Activate virtual environment and install dependencies
         run: |
+          python -m venv venv
           source venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
