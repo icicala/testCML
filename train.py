@@ -75,7 +75,7 @@ ax.set_xlabel('True wine quality',fontsize = axis_fs)
 ax.set_ylabel('Predicted wine quality', fontsize = axis_fs)#ylabel
 ax.set_title('Residuals', fontsize = title_fs)
 
-# Make it pretty- square aspect ratio
+# Make it pretty-square aspect ratio
 ax.plot([1, 10], [1, 10], 'black', linewidth=1)
 plt.ylim((2.5,8.5))
 plt.xlim((2.5,8.5))
