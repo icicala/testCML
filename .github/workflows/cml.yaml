@@ -3,12 +3,10 @@ on: [push]
 jobs:
   run:
     runs-on: ubuntu-latest
-    container: docker://dvcorg/cml-py3:latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
       - uses: iterative/setup-cml@v1
-      - name: Create virtual environment
-        run: python -m venv venv
       - name: Activate virtual environment and install dependencies
         run: |
           source venv/bin/activate
