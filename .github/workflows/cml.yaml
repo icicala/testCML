@@ -13,5 +13,6 @@ jobs:
           pip install -r requirements.txt
           python train.py
           echo "# CML report" >> report.md
-          cat metrics.txt >> report.md          
+          cat metrics.txt >> report.md
+          echo ![Image Alt Text](./feature_importance.png) >> report.md
           cml comment create report.md
