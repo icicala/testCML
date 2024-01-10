@@ -14,5 +14,5 @@ jobs:
           python train.py
           echo "# CML report" >> report.md
           cat metrics.txt >> report.md
-          echo '![](./feature_importance.png "FEATURE IMPORTANCE")' >> report.md
+          echo 'feature: ${{github.workspace}}' >> report.md
           cml comment create report.md
