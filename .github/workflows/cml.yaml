@@ -7,11 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: iterative/setup-cml@v1
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
       - name: Create virtual environment
         run: python -m venv venv
       - name: Activate virtual environment and install dependencies
